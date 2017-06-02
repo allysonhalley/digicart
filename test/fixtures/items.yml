@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  alias: MyString
+  describe: MyString
+  bar_code: MyString
+  type: 1
+  sector: one
+  status: 1
+
+two:
+  name: MyString
+  alias: MyString
+  describe: MyString
+  bar_code: MyString
+  type: 1
+  sector: two
+  status: 1
