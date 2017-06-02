@@ -40,6 +40,19 @@ DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
+-- Table `digicart`.`status`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `digicart`.`status` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NULL DEFAULT NULL ,
+  `describe` TEXT NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
 -- Table `digicart`.`type`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `digicart`.`type` (
@@ -61,16 +74,22 @@ CREATE  TABLE IF NOT EXISTS `digicart`.`item` (
   `alias` VARCHAR(45) NOT NULL ,
   `describe` TEXT NULL DEFAULT NULL ,
   `bar_code` VARCHAR(45) NOT NULL ,
-  `status` INT(11) NULL DEFAULT NULL ,
-  `id_sector_fd` INT(11) NOT NULL ,
-  `id_type_fk` INT NOT NULL ,
+  `id_status_fk` INT(11) NULL DEFAULT NULL ,
+  `id_sector_fk` INT(11) NOT NULL ,
+  `id_type_fk` INT(11) NULL DEFAULT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
-  INDEX `id_sector_fk` (`id_sector_fd` ASC) ,
   INDEX `id_type_fk` (`id_type_fk` ASC) ,
+  INDEX `id_sector_fk` (`id_sector_fk` ASC) ,
+  INDEX `id_status_fk` (`id_status_fk` ASC) ,
   CONSTRAINT `id_sector_fk`
-    FOREIGN KEY (`id_sector_fd` )
+    FOREIGN KEY (`id_sector_fk` )
     REFERENCES `digicart`.`sector` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_status_fk`
+    FOREIGN KEY (`id_status_fk` )
+    REFERENCES `digicart`.`status` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `id_type_fk`
@@ -78,6 +97,21 @@ CREATE  TABLE IF NOT EXISTS `digicart`.`item` (
     REFERENCES `digicart`.`type` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `digicart`.`movement`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `digicart`.`movement` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `id_item` INT(11) NOT NULL ,
+  `datetime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
+  `id_status` INT(11) NULL DEFAULT NULL ,
+  `id_sector` INT(11) NULL DEFAULT NULL ,
+  `id_floor` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
