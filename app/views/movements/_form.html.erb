@@ -1,0 +1,57 @@
+<%= form_with(model: movement, local: true) do |form| %>
+  <% if movement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movement.errors.count, "error") %> prohibited this movement from being saved:</h2>
+
+      <ul>
+      <% movement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :item_id %>
+    <%= form.number_field :item_id, id: :movement_item_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :item %>
+    <%= form.text_field :item, id: :movement_item %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sector %>
+    <%= form.text_field :sector, id: :movement_sector %>
+  </div>
+
+  <div class="field">
+    <%= form.label :floor %>
+    <%= form.text_field :floor, id: :movement_floor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :movement_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stock %>
+    <%= form.text_field :stock, id: :movement_stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type, id: :movement_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :moment %>
+    <%= form.datetime_select :moment, id: :movement_moment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

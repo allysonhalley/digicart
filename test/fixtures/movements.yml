@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_id: 1
+  item: MyString
+  sector: MyString
+  floor: MyString
+  status: MyString
+  stock: MyString
+  type: 
+  moment: 2017-06-08 15:17:20
+
+two:
+  item_id: 1
+  item: MyString
+  sector: MyString
+  floor: MyString
+  status: MyString
+  stock: MyString
+  type: 
+  moment: 2017-06-08 15:17:20

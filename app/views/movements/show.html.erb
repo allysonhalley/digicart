@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @movement.item_id %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @movement.item %>
+</p>
+
+<p>
+  <strong>Sector:</strong>
+  <%= @movement.sector %>
+</p>
+
+<p>
+  <strong>Floor:</strong>
+  <%= @movement.floor %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @movement.status %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @movement.stock %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @movement.type %>
+</p>
+
+<p>
+  <strong>Moment:</strong>
+  <%= @movement.moment %>
+</p>
+
+<%= link_to 'Edit', edit_movement_path(@movement) %> |
+<%= link_to 'Back', movements_path %>

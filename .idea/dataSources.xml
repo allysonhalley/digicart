@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Rails digicart: test" uuid="83527c5e-8e68-48c8-9757-a2d96255ed2f">
+    <data-source source="LOCAL" name="digicart_development" uuid="f81b1f98-9919-4963-9fa0-09c65cbb1020">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:digicart_test</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="Rails digicart: development" uuid="bc9fb49d-f508-473f-a7af-2f0447511fad">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:digicart_development</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="Rails digicart: production" uuid="a82246c3-c826-4d46-a1bb-aae5e440d805">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:digicart_production</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/digicart_development</jdbc-url>
     </data-source>
   </component>
 </project>

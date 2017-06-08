@@ -5,21 +5,10 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="skin-blue sidebar-mini" style="height: auto;">
-  <div class="wrapper" style="height: auto;">
-    <%= render 'shared/menu/top' %>
-    <%= render 'shared/menu/left' %>
-    <div class="content-wrapper" style="min-height: 946px;">
-      <section class="content">
-        <%= yield %>
-      </section>
-    </div>
-    <%= render 'shared/footer' %>
-  </div>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <body>
+    <%= yield %>
   </body>
-
 </html>
