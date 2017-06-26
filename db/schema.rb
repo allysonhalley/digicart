@@ -10,22 +10,89 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608181720) do
+ActiveRecord::Schema.define(version: 20170626191037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "movements", force: :cascade do |t|
-    t.integer "item_id"
-    t.string "item"
-    t.string "sector"
-    t.string "floor"
-    t.string "status"
-    t.string "stock"
-    t.string "type"
-    t.datetime "moment"
+  create_table "floors", force: :cascade do |t|
+    t.string "name"
+    t.text "describe"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "alias"
+    t.text "describe"
+    t.string "bar_code"
+    t.bigint "status_id"
+    t.bigint "sector_id"
+    t.bigint "type_id"
+    t.bigint "image_id"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_items_on_image_id"
+    t.index ["sector_id"], name: "index_items_on_sector_id"
+    t.index ["status_id"], name: "index_items_on_status_id"
+    t.index ["type_id"], name: "index_items_on_type_id"
+  end
+
+  create_table "movements", force: :cascade do |t|
+    t.datetime "datetime"
+    t.integer "id_item"
+    t.integer "id_status"
+    t.integer "id_sector"
+    t.integer "id_floor"
+    t.float "item_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sectors", force: :cascade do |t|
+    t.string "name"
+    t.string "alias"
+    t.text "describe"
+    t.bigint "floor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["floor_id"], name: "index_sectors_on_floor_id"
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string "name"
+    t.text "describe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.integer "amount"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_stocks_on_item_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.text "describe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "items", "images"
+  add_foreign_key "items", "sectors"
+  add_foreign_key "items", "statuses"
+  add_foreign_key "items", "types"
+  add_foreign_key "sectors", "floors"
+  add_foreign_key "stocks", "items"
 end

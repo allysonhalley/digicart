@@ -12,43 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :item_id %>
-    <%= form.number_field :item_id, id: :movement_item_id %>
+    <%= form.label :datetime %>
+    <%= form.datetime_select :datetime, id: :movement_datetime %>
   </div>
 
   <div class="field">
-    <%= form.label :item %>
-    <%= form.text_field :item, id: :movement_item %>
+    <%= form.label :id_item %>
+    <%= form.number_field :id_item, id: :movement_id_item %>
   </div>
 
   <div class="field">
-    <%= form.label :sector %>
-    <%= form.text_field :sector, id: :movement_sector %>
+    <%= form.label :id_status %>
+    <%= form.number_field :id_status, id: :movement_id_status %>
   </div>
 
   <div class="field">
-    <%= form.label :floor %>
-    <%= form.text_field :floor, id: :movement_floor %>
+    <%= form.label :id_sector %>
+    <%= form.number_field :id_sector, id: :movement_id_sector %>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :movement_status %>
+    <%= form.label :id_floor %>
+    <%= form.number_field :id_floor, id: :movement_id_floor %>
   </div>
 
   <div class="field">
-    <%= form.label :stock %>
-    <%= form.text_field :stock, id: :movement_stock %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type, id: :movement_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :moment %>
-    <%= form.datetime_select :moment, id: :movement_moment %>
+    <%= form.label :item_price %>
+    <%= form.text_field :item_price, id: :movement_item_price %>
   </div>
 
   <div class="actions">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="digicart_development" uuid="f81b1f98-9919-4963-9fa0-09c65cbb1020">
+    <data-source name="Rails digicart: development" uuid="02f21bd2-6ed0-4456-a6c4-d531670c3fcd">
       <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
@@ -9,6 +9,18 @@
       <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
       <introspection-schemas>digicart_development:public</introspection-schemas>
+    </data-source>
+    <data-source name="Rails digicart: production" uuid="66aa822a-3c9c-4af4-887e-4fc6bf5b52e9">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>postgres</user-name>
+    </data-source>
+    <data-source name="Rails digicart: test" uuid="a0e0b3be-f3f8-48fb-9381-5f6fdba45a81">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <introspection-schemas>digicart_test:public</introspection-schemas>
     </data-source>
   </component>
 </project>
