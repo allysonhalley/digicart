@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  root to: 'movements#dashboard'
-
   resources :movements
   resources :stocks
   resources :items
@@ -11,7 +9,7 @@ Rails.application.routes.draw do
   resources :types
   resources :statuses
 
-  get 'dashboard', to: 'movements#dashboard', as: :movement_list
+  get 'dashboard', to: 'movements#dashboard', as: :dashboard
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
