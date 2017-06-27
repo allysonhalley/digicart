@@ -51,6 +51,10 @@ class MovementsController < ApplicationController
     end
   end
 
+  def dashboard
+    @movements = Movement.all
+  end
+
   # DELETE /movements/1
   # DELETE /movements/1.json
   def destroy

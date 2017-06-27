@@ -1,0 +1,27 @@
+<%= form_with(model: floor, local: true) do |form| %>
+  <% if floor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(floor.errors.count, "error") %> prohibited this floor from being saved:</h2>
+
+      <ul>
+      <% floor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :floor_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :describe %>
+    <%= form.text_area :describe, id: :floor_describe %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
