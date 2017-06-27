@@ -48,13 +48,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'railties', '>= 5.1.2'
-
-gem 'bootstrap', '~> 4.0.0.alpha6'
-
-gem 'adminlte', '~> 1.4'
-
-gem 'adminlte-rails', '~> 1.3.3'
-
-
