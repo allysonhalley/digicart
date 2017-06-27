@@ -33,22 +33,22 @@
 
   <div class="field">
     <%= form.label :status_id %>
-    <%= form.text_field :status_id, id: :item_status_id %>
+    <%= form.select(:status_id, options_for_select(Status.all.collect {|f|[f.name, f.id]})) %>
   </div>
 
   <div class="field">
     <%= form.label :sector_id %>
-    <%= form.text_field :sector_id, id: :item_sector_id %>
+    <%= form.select(:sector_id, options_for_select(Sector.all.collect {|f|[f.name, f.id]})) %>
   </div>
 
   <div class="field">
     <%= form.label :type_id %>
-    <%= form.text_field :type_id, id: :item_type_id %>
+    <%= form.select(:type_id, options_for_select(Type.all.collect {|f|[f.name, f.id]})) %>
   </div>
 
   <div class="field">
     <%= form.label :image_id %>
-    <%= form.text_field :image_id, id: :item_image_id %>
+    <%= form.select(:image_id, options_for_select(Image.all.collect {|f|[f.url, f.id]})) %>
   </div>
 
   <div class="field">

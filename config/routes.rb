@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: 'movements#dashboard'
+
   resources :movements
   resources :stocks
   resources :items
