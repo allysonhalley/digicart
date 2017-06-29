@@ -1,0 +1,7 @@
+1 - Card UID: 8A D7 3B 5B
+2 - Card UID: 33 91 3B 5B
+3 - Card UID: 0E 21 13 BB
+Chaveiro - Card UID: 06 7B CA 93
+Thales FBV - Card UID: F9 D6 08 0C
+Allyson FBV - Card UID: 07 EB 2F 6F
+Rodrigo FBV - Card UID: 09 12 F3 0D

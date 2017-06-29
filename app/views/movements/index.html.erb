@@ -1,36 +1,51 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Movements</h1>
+<div class="col-xs-12">
+  <div class="box">
+    <div class="box-header">
+      <div class="box-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" data-cip-id="cIPJQ342845640">
 
-<table>
-  <thead>
-    <tr>
-      <th>Datetime</th>
-      <th>Id item</TH>
-      <th>Id status</th>
-      <th>Id sector</th>
-      <th>Id floor</th>
-      <th>Item price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i   ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Datetime</th>
+            <th>Id item</TH>
+            <th>Id status</th>
+            <th>Id sector</th>
+            <th>Id floor</th>
+            <th>Item price</th>
+            <th colspan="1"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @movements.each do |movement| %>
-      <tr>
-        <td><%= movement.datetime %></td>
-        <td><%= movement.id_item %></td>
-        <td><%= movement.id_status %></td>
-        <td><%= movement.id_sector %></td>
-        <td><%= movement.id_floor %></td>
-        <td><%= movement.item_price %></td>
-        <td><%= link_to 'Show', movement %></td>
-        <td><%= link_to 'Edit', edit_movement_path(movement) %></td>
-        <td><%= link_to 'Destroy', movement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @movements.each do |movement| %>
+            <tr>
+              <td><%= movement.datetime %></td>
+              <td><%= movement.id_item %></td>
+              <td><%= movement.id_status %></td>
+              <td><%= movement.id_sector %></td>
+              <td><%= movement.id_floor %></td>
+              <td><%= movement.item_price %></td>
+              <td><%= link_to 'Show', movement %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <br>
 

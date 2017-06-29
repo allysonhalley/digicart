@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :floor %>
-    <%= form.select(:floor, options_for_select(Floor.all.collect {|f|[f.name]})) %>
+    <%= form.label :floor_id %>
+    <%= form.select(:floor_id, options_for_select(Floor.all.collect {|f|[f.name]})) %>
   </div>
 
   <div class="actions">

@@ -65,6 +65,40 @@ class MovementsController < ApplicationController
     end
   end
 
+  def count_add_cart
+
+  end
+
+  def count_out_cart
+
+  end
+
+  def move_to_date
+
+    @movements = Movement.to_date
+
+  end
+
+  def moved_sector
+
+  end
+
+  def moved_type
+
+  end
+
+  def moved_floor
+
+  end
+
+  def moved_sotck
+
+  end
+
+  def moved_item_stock
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movement
@@ -75,4 +109,5 @@ class MovementsController < ApplicationController
     def movement_params
       params.require(:movement).permit(:datetime, :id_item, :id_status, :id_sector, :id_floor, :item_price)
     end
+
 end
