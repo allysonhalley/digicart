@@ -22,5 +22,14 @@
       <user-name>postgres</user-name>
       <introspection-schemas>digicart_test:public</introspection-schemas>
     </data-source>
+    <data-source name="DigicartWeb" uuid="d4557696-a2b1-4cc3-a0a8-de7928fcf61c">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>digicartadmin</user-name>
+      <introspection-schemas>postgres:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

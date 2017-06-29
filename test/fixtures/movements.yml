@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  datetime: 2017-06-26 16:10:37
-  id_item: 1
-  id_status: 1
-  id_sector: 1
-  id_floor: 1
+  datetime: 2017-06-28 23:14:12
+  item: one
+  status: one
+  sector: one
+  floor: one
   item_price: 1.5
 
 two:
-  datetime: 2017-06-26 16:10:37
-  id_item: 1
-  id_status: 1
-  id_sector: 1
-  id_floor: 1
+  datetime: 2017-06-28 23:14:12
+  item: two
+  status: two
+  sector: two
+  floor: two
   item_price: 1.5

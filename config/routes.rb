@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :movements
   root to: 'movements#index'
 
-  resources :movements
   resources :stocks
   resources :items
   resources :sectors

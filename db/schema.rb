@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626191037) do
+ActiveRecord::Schema.define(version: 20170629021412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,13 +48,17 @@ ActiveRecord::Schema.define(version: 20170626191037) do
 
   create_table "movements", force: :cascade do |t|
     t.datetime "datetime"
-    t.integer "id_item"
-    t.integer "id_status"
-    t.integer "id_sector"
-    t.integer "id_floor"
+    t.bigint "item_id"
+    t.bigint "status_id"
+    t.bigint "sector_id"
+    t.bigint "floor_id"
     t.float "item_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["floor_id"], name: "index_movements_on_floor_id"
+    t.index ["item_id"], name: "index_movements_on_item_id"
+    t.index ["sector_id"], name: "index_movements_on_sector_id"
+    t.index ["status_id"], name: "index_movements_on_status_id"
   end
 
   create_table "sectors", force: :cascade do |t|
@@ -93,6 +97,10 @@ ActiveRecord::Schema.define(version: 20170626191037) do
   add_foreign_key "items", "sectors"
   add_foreign_key "items", "statuses"
   add_foreign_key "items", "types"
+  add_foreign_key "movements", "floors"
+  add_foreign_key "movements", "items"
+  add_foreign_key "movements", "sectors"
+  add_foreign_key "movements", "statuses"
   add_foreign_key "sectors", "floors"
   add_foreign_key "stocks", "items"
 end

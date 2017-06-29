@@ -87,3 +87,12 @@ production:
   database: digicart_production
   username: postgres
   password: root
+
+#Apontamento para o db web
+#development:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: digicartdb
+#  username: digicartadmin
+#  password: digicartdb
+#  host: digicartdb.cnqbi0tfrom7.us-east-1.rds.amazonaws.com

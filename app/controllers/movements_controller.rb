@@ -25,7 +25,7 @@ class MovementsController < ApplicationController
   # POST /movements.json
   def create
     @movement = Movement.new(movement_params)
-
+    @movement.fill(movement_params)
     respond_to do |format|
       if @movement.save
         format.html { redirect_to @movement, notice: 'Movement was successfully created.' }
@@ -107,7 +107,6 @@ class MovementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movement_params
-      params.require(:movement).permit(:datetime, :id_item, :id_status, :id_sector, :id_floor, :item_price)
+      params.require(:movement).permit(:datetime, :item_id, :status_id, :sector_id, :floor_id, :item_price)
     end
-
 end
