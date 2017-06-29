@@ -17,23 +17,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :id_item %>
-    <%= form.select(:id_item, options_for_select(Item.all.collect {|f|[f.name]})) %>
+    <%= form.label :item_id %>
+    <%= form.select(:item_id, options_for_select(Item.all.collect {|f|[f.name]})) %>
   </div>
 
   <div class="field">
-    <%= form.label :id_status %>
-    <%= form.select(:id_status, options_for_select(Status.all.collect {|f|[f.name]})) %>
+    <%= form.label :status_id %>
+    <%= form.select(:status_id, options_for_select(Status.all.collect {|f|[f.name]})) %>
   </div>
 
   <div class="field">
-    <%= form.label :id_sector %>
-    <%= form.select(:id_sector, options_for_select(Sector.all.collect {|f|[f.name]})) %>
+    <%= form.label :sector_id %>
+    <%= form.select(:sector_id, options_for_select(Sector.all.collect {|f|[f.name]})) %>
   </div>
 
   <div class="field">
-    <%= form.label :id_floor %>
-    <%= form.select(:id_floor, options_for_select(Floor.all.collect {|f|[f.name]})) %>
+    <%= form.label :floor_id %>
+    <%= form.select(:floor_id, options_for_select(Floor.all.collect {|f|[f.name]})) %>
   </div>
 
   <div class="field">
