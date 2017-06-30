@@ -2,27 +2,27 @@
 
 <p>
   <strong>Datetime:</strong>
-  <%= @movement.datetime %>
+  <%= @movement.datetime.strftime('%d/%m/%Y %T') %>
 </p>
 
 <p>
   <strong>Item:</strong>
-  <%= @movement.item %>
+  <%= @movement.item.name %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= @movement.status %>
+  <%= @movement.status.name %>
 </p>
 
 <p>
   <strong>Sector:</strong>
-  <%= @movement.sector %>
+  <%= @movement.sector.describe %>
 </p>
 
 <p>
   <strong>Floor:</strong>
-  <%= @movement.floor %>
+  <%= @movement.floor.describe %>
 </p>
 
 <p>

@@ -4,17 +4,6 @@
 
 <div class="col-xs-12">
   <div class="box">
-    <div class="box-header">
-      <div class="box-tools">
-        <div class="input-group input-group-sm" style="width: 150px;">
-          <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" data-cip-id="cIPJQ342845640">
-
-          <div class="input-group-btn">
-            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
       <table class="table table-hover">
@@ -45,8 +34,10 @@
               <td><%= item.image.url %></td>
               <td><%= item.price %></td>
               <td><%= link_to 'Show', item %></td>
-              <td><%= link_to 'Edit', edit_item_path(item) %></td>
-              <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Edit', edit_item_path(item)%></td>
+              <td>
+                <%= button_to "Move", to_move_path, class:"btn btn-default", style:"", method: :post, remote: true, params: { item_id: item.bar_code } %>
+              </td>
             </tr>
           <% end %>
         </tbody>

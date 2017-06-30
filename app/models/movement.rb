@@ -6,13 +6,12 @@ class Movement < ApplicationRecord
 
   def fill(params)
 
-    self.datetime = params[:datetime]
-
-    self.item = Item.find(params[:item_id])
-    self.status = Status.find(params[:status_id])
-    self.sector = Sector.find(params[:sector_id])
-    self.floor = Floor.find(params[:floor_id])
-    self.item_price = params[:item_price]
+    self.datetime = Time.current.strftime('%d/%m/%Y %T')
+    self.item = Item.find_by_bar_code(params[:item_id])
+    self.status = self.item.status
+    self.sector = self.item.sector
+    self.floor = self.item.sector.floor
+    self.item_price = self.item.price
   end
 
   def this_item (id_item)
@@ -25,6 +24,10 @@ class Movement < ApplicationRecord
 
     @movements_today = Movement.where(datetime: Date.current)
 
+  end
+
+  def to_type(params)
+    @to_type = Movement.where(params[:type])
   end
 
 end

@@ -52,7 +52,7 @@ class MovementsController < ApplicationController
   end
 
   def dashboard
-    @movements = Movement.all
+    #@movements = Movement.all
   end
 
   # DELETE /movements/1
@@ -62,6 +62,20 @@ class MovementsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to movements_url, notice: 'Movement was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def to_move
+    @movement = Movement.new
+    @movement.fill(params)
+    respond_to do |format|
+      if @movement.save
+        format.html { redirect_to @movement, notice: 'Movement was successfully created.' }
+        format.json { render :show, status: :created, location: @movement }
+      else
+        format.html { render :new }
+        format.json { render json: @movement.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -84,7 +98,7 @@ class MovementsController < ApplicationController
   end
 
   def moved_type
-
+    @movements = Movement.to_type(params)
   end
 
   def moved_floor
