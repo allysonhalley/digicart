@@ -75,6 +75,19 @@ class MovementsController < ApplicationController
     end
   end
 
+  def tag_to_move(id_item)
+    @movement = Movement.new
+    @movement.tag_fill(id_item)
+    respond_to do |format|
+      if @movement.save
+        format.html { redirect_to @movement, notice: 'Movement was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
+
 
   def dashboard
 
@@ -90,8 +103,8 @@ class MovementsController < ApplicationController
 
   end
 
-  def moved_type
-    @movements = Movement.to_type(params)
+  def for_type
+    
   end
 
   def moved_floor
