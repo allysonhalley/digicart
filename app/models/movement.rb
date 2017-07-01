@@ -16,6 +16,17 @@ class Movement < ApplicationRecord
     self.item_price = self.item.price
   end
 
+  def tag_fill(params)
+
+    self.datetime = Time.current.strftime('%d/%m/%Y %T')
+    self.item = Item.find_by_bar_code(params[:item_id])
+    self.type = self.item.type
+    self.status = self.item.status
+    self.sector = self.item.sector
+    self.floor = self.item.sector.floor
+    self.item_price = self.item.price
+  end
+
   def count_type(type_id)
     Movement.type.where(type: type_id)
   end

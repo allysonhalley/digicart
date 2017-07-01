@@ -5,7 +5,7 @@
       <table class="table table-hover">
         <thead>
         <tr>
-          <th>Name</th>
+          <th>Item</th>
           <th>Evolution</TH>
         </tr>
         </thead>
@@ -16,7 +16,7 @@
               <td><%= type.name %></td>
               <td>
                 <div class="progress-group">
-                  <span class="progress-text">Items for sell</span>
+                  <span class="progress-text">Activity</span>
                   <span class="progress-number"><%= Movement.where(type_id: type.id).count('type_id') %>/<%= Movement.count %></span>
 
                   <div class="progress sm">
