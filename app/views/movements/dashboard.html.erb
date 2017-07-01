@@ -3,6 +3,5 @@
   <p class="text-center">
     <strong>Dashboard</strong>
   </p>
-  <%= select_tag(:item, (options_for_select(Item.all.collect {|f|[f.name]}))) %>
-  <%= render 'for_item' %>
+  <%= render 'movements/dashboards/resume' %>
 </div>

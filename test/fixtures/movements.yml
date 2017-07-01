@@ -1,16 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  datetime: 2017-06-28 23:14:12
+  datetime: 2017-06-30 01:33:22
   item: one
+  type: one
   status: one
   sector: one
   floor: one
   item_price: 1.5
 
 two:
-  datetime: 2017-06-28 23:14:12
+  datetime: 2017-06-30 01:33:22
   item: two
+  type: two
   status: two
   sector: two
   floor: two

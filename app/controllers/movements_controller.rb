@@ -4,7 +4,7 @@ class MovementsController < ApplicationController
   # GET /movements
   # GET /movements.json
   def index
-    @movements = Movement.all
+    @movements = Movement.all.order(:datetime)
   end
 
   # GET /movements/1
@@ -51,10 +51,6 @@ class MovementsController < ApplicationController
     end
   end
 
-  def dashboard
-    #@movements = Movement.all
-  end
-
   # DELETE /movements/1
   # DELETE /movements/1.json
   def destroy
@@ -79,18 +75,15 @@ class MovementsController < ApplicationController
     end
   end
 
-  def count_add_cart
+
+  def dashboard
+
+    #@movements = Movement.for_date(params[:date])
 
   end
 
-  def count_out_cart
-
-  end
-
-  def move_to_date
-
-    @movements = Movement.to_date
-
+  def count_type(type_id)
+    Movement.type.where(type: type_id)
   end
 
   def moved_sector

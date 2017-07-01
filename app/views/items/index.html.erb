@@ -9,14 +9,12 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>Name</th>
             <th>Alias</th>
             <th>Describe</th>
             <th>Bar code</th>
             <th>Status</th>
             <th>Sector</th>
             <th>Type</th>
-            <th>Image</th>
             <th>Price</th>
             <th colspan="3"></th>
           </tr>
@@ -24,14 +22,12 @@
         <tbody>
           <% @items.each do |item| %>
             <tr>
-              <td><%= item.name %></td>
               <td><%= item.alias %></td>
               <td><%= item.describe %></td>
               <td><%= item.bar_code %></td>
               <td><%= item.status.name %></td>
               <td><%= item.sector.name %></td>
               <td><%= item.type.name %></td>
-              <td><%= item.image.url %></td>
               <td><%= item.price %></td>
               <td><%= link_to 'Show', item %></td>
               <td><%= link_to 'Edit', edit_item_path(item)%></td>

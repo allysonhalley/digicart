@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629021412) do
+ActiveRecord::Schema.define(version: 20170630043322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170629021412) do
   create_table "movements", force: :cascade do |t|
     t.datetime "datetime"
     t.bigint "item_id"
+    t.bigint "type_id"
     t.bigint "status_id"
     t.bigint "sector_id"
     t.bigint "floor_id"
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170629021412) do
     t.index ["item_id"], name: "index_movements_on_item_id"
     t.index ["sector_id"], name: "index_movements_on_sector_id"
     t.index ["status_id"], name: "index_movements_on_status_id"
+    t.index ["type_id"], name: "index_movements_on_type_id"
   end
 
   create_table "sectors", force: :cascade do |t|
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 20170629021412) do
   add_foreign_key "movements", "items"
   add_foreign_key "movements", "sectors"
   add_foreign_key "movements", "statuses"
+  add_foreign_key "movements", "types"
   add_foreign_key "sectors", "floors"
   add_foreign_key "stocks", "items"
 end

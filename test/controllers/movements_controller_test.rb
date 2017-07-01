@@ -17,7 +17,7 @@ class MovementsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create movement" do
     assert_difference('Movement.count') do
-      post movements_url, params: { movement: { datetime: @movement.datetime, floor_id: @movement.floor_id, item_id: @movement.item_id, item_price: @movement.item_price, sector_id: @movement.sector_id, status_id: @movement.status_id } }
+      post movements_url, params: { movement: { datetime: @movement.datetime, floor_id: @movement.floor_id, item_id: @movement.item_id, item_price: @movement.item_price, sector_id: @movement.sector_id, status_id: @movement.status_id, type_id: @movement.type_id } }
     end
 
     assert_redirected_to movement_url(Movement.last)
@@ -34,7 +34,7 @@ class MovementsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update movement" do
-    patch movement_url(@movement), params: { movement: { datetime: @movement.datetime, floor_id: @movement.floor_id, item_id: @movement.item_id, item_price: @movement.item_price, sector_id: @movement.sector_id, status_id: @movement.status_id } }
+    patch movement_url(@movement), params: { movement: { datetime: @movement.datetime, floor_id: @movement.floor_id, item_id: @movement.item_id, item_price: @movement.item_price, sector_id: @movement.sector_id, status_id: @movement.status_id, type_id: @movement.type_id } }
     assert_redirected_to movement_url(@movement)
   end
 

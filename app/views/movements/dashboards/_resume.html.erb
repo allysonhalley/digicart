@@ -1,0 +1,33 @@
+<div class="col-xs-12">
+  <div class="box">
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Evolution</TH>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% Type.all.each do |type| %>
+            <tr>
+              <td><%= type.name %></td>
+              <td>
+                <div class="progress-group">
+                  <span class="progress-text">Items for sell</span>
+                  <span class="progress-number"><%= Movement.where(type_id: type.id).count('type_id') %>/<%= Movement.count %></span>
+
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-aqua" style="width: <%= ((Movement.where(type_id: type.id).count('type_id').to_f/Movement.count.to_f)*100.00) %>%"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

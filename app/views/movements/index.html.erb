@@ -9,11 +9,11 @@
         <thead>
           <tr>
             <th>Datetime</th>
+            <th>Type</th>
             <th>Id item</TH>
             <th>TAG</TH>
             <th>Id status</th>
             <th>Id sector</th>
-            <th>Id floor</th>
             <th>Item price</th>
             <th colspan="1"></th>
           </tr>
@@ -23,11 +23,11 @@
           <% @movements.each do |movement| %>
             <tr>
               <td><%= movement.datetime.strftime('%d/%m/%Y %T') %></td>
+              <td><%= movement.type.name %></td>
               <td><%= movement.item.name %></td>
               <td><%= movement.item.bar_code %></td>
               <td><%= movement.status.name %></td>
               <td><%= movement.sector.name %></td>
-              <td><%= movement.floor.describe %></td>
               <td><%= movement.item_price %></td>
               <td><%= link_to 'Show', movement %></td>
             </tr>
