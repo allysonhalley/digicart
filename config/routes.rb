@@ -15,7 +15,12 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'movements#dashboard', as: :dashboard
   #Dashboard reports
-  get 'dashboard_for_items', to: 'movements#dashboard', as: :dashboard
+  get 'dashboard_for_type', to: 'movements#for_type', as: :dashboard_for_type
+  get 'dashboard_for_date', to: 'movements#for_date', as: :dashboard_for_date
+  get 'dashboard_for_sector', to: 'movements#for_sector', as: :dashboard_for_sector
+  get 'dashboard_for_floor', to: 'movements#for_floor', as: :dashboard_for_floor
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
