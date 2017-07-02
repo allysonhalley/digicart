@@ -95,19 +95,30 @@ class MovementsController < ApplicationController
 
   end
 
+  def timeline
+    
+  end
+
   def count_type(type_id)
     Movement.type.where(type: type_id)
   end
 
-  def moved_sector
+  def for_sector
+
+    @sectors = Sector.all
 
   end
 
-  def for_type
+  def for_product
+
+    @types = Type.all
+
     
   end
 
-  def moved_floor
+  def for_floor
+
+    @floors = Floor.all
 
   end
 

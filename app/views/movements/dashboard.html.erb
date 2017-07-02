@@ -3,5 +3,16 @@
   <p class="text-center">
     <strong>Dashboard</strong>
   </p>
-  <%= render 'movements/dashboards/resume' %>
+  <div class="col-md-3">
+    <%= button_to "For Type", for_product_path, :method => :get, class: 'btn btn-app' %>
+  </div>
+  <div class="col-md-3">
+    <%= button_to "For Sector", for_sector_path, :method => :get, class: 'btn btn-app' %>
+  </div>
+  <div class="col-md-3">
+    <%= button_to "For Floor", for_floor_path, :method => :get, class: 'btn btn-app' %>
+  </div>
+  <div class="col-md-3">
+    <%= button_to "Timeline", timeline_path, :method => :get, class: 'btn btn-app' %>
+  </div>
 </div>
