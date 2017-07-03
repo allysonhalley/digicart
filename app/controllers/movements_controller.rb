@@ -85,6 +85,11 @@ class MovementsController < ApplicationController
     end
   end
 
+  def movements_to_app
+    @movements = Movement.all
+    render json: @movements
+  end
+
   def dashboard
 
     #@movements = Movement.for_date(params[:date])

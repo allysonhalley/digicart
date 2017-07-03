@@ -61,6 +61,11 @@ class ImagesController < ApplicationController
     end
   end
 
+  def images_to_app
+    @images = Image.all
+    render json: @images
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_image
