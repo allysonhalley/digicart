@@ -75,19 +75,15 @@ class MovementsController < ApplicationController
     end
   end
 
-  def tag_to_move(id_item)
+  def tag_to_move
     @movement = Movement.new
-    @movement.tag_fill(id_item)
-    respond_to do |format|
-      if @movement.save
-        format.json { render :show, status: :created, location: @movement }
-      else
-        format.json { render json: @movement.errors, status: :unprocessable_entity }
-      end
+    @movement.tag_fill(params[:id_item])
+    if @movement.save
+      render json: @movement
+    else
+      @movement.rollback_active_record_state!
     end
   end
-
-
 
   def dashboard
 
@@ -119,6 +115,13 @@ class MovementsController < ApplicationController
   def for_floor
 
     @floors = Floor.all
+
+  end
+
+  def availability_moves
+
+    @availables = Movement.availables
+    @unavailables = Movement.unavailable
 
   end
 

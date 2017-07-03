@@ -61,6 +61,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def availables_items
+    @items = Item.availables
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item

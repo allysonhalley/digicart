@@ -5,6 +5,9 @@ class Movement < ApplicationRecord
   belongs_to :sector
   belongs_to :floor
 
+  scope :availables, -> {where(item: Item.availables)}
+  scope :unavailable, -> {where(item: Item.unavailables)}
+
   def fill(params)
 
     self.datetime = Time.current.strftime('%d/%m/%Y %T')
@@ -19,7 +22,7 @@ class Movement < ApplicationRecord
   def tag_fill(params)
 
     self.datetime = Time.current.strftime('%d/%m/%Y %T')
-    self.item = Item.find_by_bar_code(params[:item_id])
+    self.item = Item.find_by_bar_code(params)
     self.type = self.item.type
     self.status = self.item.status
     self.sector = self.item.sector
@@ -42,5 +45,6 @@ class Movement < ApplicationRecord
     Movement.where(datetime: date)
 
   end
+
 
 end

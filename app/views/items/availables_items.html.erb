@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Avaibles Items</h1>
+
+<div class="col-xs-12">
+  <div class="box">
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Alias</th>
+          <th>Describe</th>
+          <th>Bar code</th>
+          <th>Status</th>
+          <th>Sector</th>
+          <th>Type</th>
+          <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @items.each do |item| %>
+            <tr>
+              <td><%= item.alias %></td>
+              <td><%= item.describe %></td>
+              <td><%= item.bar_code %></td>
+              <td><%= item.status.name %></td>
+              <td><%= item.sector.name %></td>
+              <td><%= item.type.name %></td>
+              <td><%= item.price %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= link_to 'Items', items_path, class: "btn btn-default" %>
+</div>

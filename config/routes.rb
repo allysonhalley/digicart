@@ -11,9 +11,19 @@ Rails.application.routes.draw do
 
   root to: 'movements#index'
 
-  post 'to_move', to: 'movements#to_move', as: :to_move
-  post 'tag_to_move', to: 'movements#tag_to_move', as: :tag_to_move
+  #Availabilities
+  get 'availables_status', to: 'statuses#availables_status', as: :availables_status
+  get 'availables_items', to: 'items#availables_items', as: :availables_items
+  get 'availables_moves', to: 'movements#availables_items', as: :availables_moves
+  get 'availability_moves', to: 'movements#availability_moves', as: :availability_moves
 
+  #routes to moves items
+  post 'to_move', to: 'movements#to_move', as: :to_move
+
+  #route fo comunication with app
+  get 'tag_to_move:id_item', to: 'movements#tag_to_move'
+
+  #Dashboard route
   get 'dashboard', to: 'movements#dashboard', as: :dashboard
   #Dashboard reports
   get 'for_product', to: 'movements#for_product', as: :for_product
