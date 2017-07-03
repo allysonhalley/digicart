@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   resources :movements
-  root to: 'movements#index'
-
   resources :stocks
   resources :items
   resources :sectors
@@ -11,14 +9,18 @@ Rails.application.routes.draw do
   resources :types
   resources :statuses
 
+  root to: 'movements#index'
+
   post 'to_move', to: 'movements#to_move', as: :to_move
+  post 'tag_to_move', to: 'movements#tag_to_move', as: :tag_to_move
 
   get 'dashboard', to: 'movements#dashboard', as: :dashboard
   #Dashboard reports
-  get 'dashboard_for_type', to: 'movements#for_type', as: :dashboard_for_type
-  get 'dashboard_for_date', to: 'movements#for_date', as: :dashboard_for_date
-  get 'dashboard_for_sector', to: 'movements#for_sector', as: :dashboard_for_sector
-  get 'dashboard_for_floor', to: 'movements#for_floor', as: :dashboard_for_floor
+  get 'for_product', to: 'movements#for_product', as: :for_product
+  get 'timeline', to: 'movements#timeline', as: :timeline
+  get 'for_sector', to: 'movements#for_sector', as: :for_sector
+  get 'for_floor', to: 'movements#for_floor', as: :for_floor
+
 
 
 
