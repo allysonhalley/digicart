@@ -81,8 +81,10 @@ class MovementsController < ApplicationController
     respond_to do |format|
       if @movement.save
         format.html { redirect_to @movement, notice: 'Movement was successfully created.' }
+        format.json { render :show, status: :created, location: @movement }
       else
         format.html { render :new }
+        format.json { render json: @movement.errors, status: :unprocessable_entity }
       end
     end
   end
