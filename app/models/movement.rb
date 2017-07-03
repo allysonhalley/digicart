@@ -10,7 +10,7 @@ class Movement < ApplicationRecord
 
   def fill(params)
 
-    self.datetime = Time.current.strftime('%d/%m/%Y %T')
+    self.datetime = Time.current.strftime(params[:datetime])
     self.item = Item.find_by_bar_code(params[:item_id])
     self.type = self.item.type
     self.status = self.item.status

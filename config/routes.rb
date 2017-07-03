@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   #route fo comunication with app
   get 'tag_to_move:id_item', to: 'movements#tag_to_move'
+  get 'items_to_app', to: 'items#items_to_app'
 
   #Dashboard route
   get 'dashboard', to: 'movements#dashboard', as: :dashboard

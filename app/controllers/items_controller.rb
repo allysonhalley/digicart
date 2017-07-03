@@ -61,6 +61,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def items_to_app
+
+    @items = Item.all
+    render json: @items
+
+  end
+
   def availables_items
     @items = Item.availables
   end
