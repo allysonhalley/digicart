@@ -92,7 +92,8 @@ class MovementsController < ApplicationController
 
   def dashboard
 
-    #@movements = Movement.for_date(params[:date])
+    @availables = Movement.availables
+    @unavailables = Movement.unavailable
 
   end
 

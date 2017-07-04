@@ -50,3 +50,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
+
+gem 'bootstrapped-rails', '~> 2.0', '>= 2.0.8.5'

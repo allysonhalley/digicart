@@ -1,0 +1,34 @@
+<div class="col-xs-12">
+  <p class="text-center">
+    <strong>Floor</strong>
+  </p>
+  <div class="box">
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Floor</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% Floor.all.each do |floor| %>
+            <tr>
+              <td>
+                <div class="progress-group">
+                  <span class="progress-text"><%= floor.name %></span>
+                  <span class="progress-number"><%= Movement.where(floor_id: floor.id).count('floor_id') %>/<%= Movement.count %></span>
+
+                  <div class="progress sm">
+                    <div class="progress-bar progress-bar-aqua" style="width: <%= ((Movement.where(floor_id: floor.id).count('floor_id').to_f/Movement.count.to_f)*100.00) %>%"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
