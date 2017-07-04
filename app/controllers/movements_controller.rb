@@ -85,6 +85,35 @@ class MovementsController < ApplicationController
     end
   end
 
+  #Create movements from json
+  def app_to_move
+
+    params[].each {|attributes| attributes.store("item_id", current_item.id)}
+    movements = params[].collect {|key, movement_attributes| Item.new(movement_attributes)}
+    all_movement_valid = true
+    movements.each_with_index do |movement, index |
+      unless movement.valid?
+        all_movement_valid = false
+        invalid_movement = movement[index]
+      end
+    end
+    if all_movement_valid
+      @movements = []
+      movements.each do |movement|
+        movement.save
+        @movements << movement
+      end
+    end
+
+    @movement = Movement.new
+    @movement.tag_fill(params[:item_id])
+    if @movement.save
+      render json: 'Movements ok!'
+    else
+      @movement.rollback_active_record_state!
+    end
+  end
+
   def movements_to_app
     @movements = Movement.all
     render json: @movements
