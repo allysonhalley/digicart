@@ -100,17 +100,13 @@ class MovementsController < ApplicationController
     if all_movement_valid
       @movements = []
       movements.each do |movement|
-        movement.save
-        @movements << movement
+        if movement.save
+          @movements << movement
+        else
+          @movement.rollback_active_record_state!
+        end
+        render json: 'Movements ok!'
       end
-    end
-
-    @movement = Movement.new
-    @movement.tag_fill(params[:item_id])
-    if @movement.save
-      render json: 'Movements ok!'
-    else
-      @movement.rollback_active_record_state!
     end
   end
 
