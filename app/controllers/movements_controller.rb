@@ -87,15 +87,22 @@ class MovementsController < ApplicationController
 
   #Create movements from json
   def app_to_move
-    movements = Collector[Movement]
-    movements = params[:movements]
-    movements.each do|movement_app|
+    movements = Collector::Movement
+    params[:movements].each do|movement_app|
       movement.tag_fill(movement_app.item_id)
       if movement.save
         render json: "Movement #movement doesn't create."
       end
     end
     render json: "Movement was successfully created."
+  end
+
+  #testar envio de json (fail)
+  def test_app_move
+
+    movements = Collector::Movement
+    route_for(app_to_move, json: [movements: movements.all], :via => [:post])
+
   end
 
   def movements_to_app
