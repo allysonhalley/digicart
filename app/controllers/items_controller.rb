@@ -63,8 +63,8 @@ class ItemsController < ApplicationController
 
   def items_to_app
 
-    @items = Item.all
-    render json: @items
+    items = Item.all
+    render json: [items: items]
 
   end
 

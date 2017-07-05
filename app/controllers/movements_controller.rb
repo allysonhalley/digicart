@@ -76,43 +76,33 @@ class MovementsController < ApplicationController
   end
 
   def tag_to_move
-    @movement = Movement.new
-    @movement.tag_fill(params[:id_item])
-    if @movement.save
-      render json: @movement
+    movement = Movement.new
+    movement.tag_fill(params[:id_item])
+    if movement.save
+      render [json: movement]
     else
-      @movement.rollback_active_record_state!
+      movement.rollback_active_record_state!
     end
   end
 
   #Create movements from json
   def app_to_move
-
-    params[].each {|attributes| attributes.store("item_id", current_item.id)}
-    movements = params[].collect {|key, movement_attributes| Item.new(movement_attributes)}
-    all_movement_valid = true
-    movements.each_with_index do |movement, index |
-      unless movement.valid?
-        all_movement_valid = false
-        invalid_movement = movement[index]
+    movements = Collector[Movement]
+    movements = params[:movements]
+    movements.each do|movement_app|
+      movement.tag_fill(movement_app.item_id)
+      if movement.save
+        render json: "Movement #movement doesn't create."
       end
     end
-    if all_movement_valid
-      @movements = []
-      movements.each do |movement|
-        if movement.save
-          @movements << movement
-        else
-          @movement.rollback_active_record_state!
-        end
-        render json: 'Movements ok!'
-      end
-    end
+    render json: "Movement was successfully created."
   end
 
   def movements_to_app
-    @movements = Movement.all
-    render json: @movements
+
+    movements = Movement.all
+    render json: [movements: movements]
+
   end
 
   def dashboard
