@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   post 'app_to_move', to: 'movements#app_to_move'
 
   #routes test
-  get 'test_app_move', to: 'movements#test_app_move', :via => [ :post]
+  #get 'test_app_move', to: 'movements#test_app_move', :via => [ :post]
 
 
 
