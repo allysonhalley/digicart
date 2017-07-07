@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   def items_to_app
 
     items = Item.all
-    render json: [items: items]
+    render json: items
 
   end
 
