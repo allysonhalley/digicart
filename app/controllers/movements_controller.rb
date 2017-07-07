@@ -80,7 +80,7 @@ class MovementsController < ApplicationController
     movement = Movement.new
     movement.tag_fill(params[:id_item])
     if movement.save
-      render [json: movement]
+      render json: movement
     else
       movement.rollback_active_record_state!
     end
