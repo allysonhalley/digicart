@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Items</h1>
-
-<div class="col-xs-12">
+<div class="col-md-12">
   <div class="box">
+    <div class="box-header">
+      <h1>Items</h1>
+    </div>
     <!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
       <table class="table table-hover">
@@ -16,7 +16,10 @@
             <th>Sector</th>
             <th>Type</th>
             <th>Price</th>
-            <th colspan="3"></th>
+            <th colspan="3">
+              <%= link_to "Availables Items", availables_items_path, class: "btn btn-default" %>
+              <%= link_to 'New Item', new_item_path, class: "btn btn-default" %>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -40,7 +43,8 @@
       </table>
     </div>
   </div>
-  <%= link_to "Availables Items", availables_items_path, class: "btn btn-default" %>
-  <%= link_to 'New Item', new_item_path, class: "btn btn-default" %>
+  <div>
+    <%= will_paginate @items, renderer: BootstrapPagination::Rails %>
+  </div>
 </div>
 

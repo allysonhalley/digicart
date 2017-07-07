@@ -52,3 +52,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
 gem 'bootstrapped-rails', '~> 2.0', '>= 2.0.8.5'
+
+gem 'oauth2', '~> 1.4'
+
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
