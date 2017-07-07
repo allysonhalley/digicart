@@ -113,7 +113,7 @@ class MovementsController < ApplicationController
   def movements_to_app
 
     movements = Movement.all
-    render json: [movements: movements]
+    render json: movements
 
   end
 
