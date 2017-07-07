@@ -1,5 +1,6 @@
 class MovementsController < ApplicationController
   before_action :set_movement, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, :with => [:app_to_move]
 
   # GET /movements
   # GET /movements.json
@@ -88,15 +89,17 @@ class MovementsController < ApplicationController
   #Create movements from json
   def app_to_move
 
-    params[:movements].each do|movement_app|
-      movement = Movement.class
-      movement.tag_fill(movement_app.item)
-      if movement.save
-        render json: "Movement #movement doesn't create."
-      else
-        render json: "Movement was successfully created."
+    #data = request.body.read
+    #params = JSON.parse(data)
+    movements_list = params['_json']
+    movements_list.each do|movement_app|
+      movement = Movement.new
+      movement.tag_fill(movement_app['item_id'])
+      if not movement.save
+        render json: "Movement were not successfully created."
       end
     end
+    render json: "Movements were successfully created"
   end
 
   #testar envio de json (fail)
