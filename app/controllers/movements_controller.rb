@@ -93,9 +93,9 @@ class MovementsController < ApplicationController
     #data = request.body.read
     #params = JSON.parse(data)
     movements_list = params['_json']
-    movements_list.each do|movement_app|
+    movements_list.each do|app_params|
       movement = Movement.new
-      movement.tag_fill(movement_app['item_id'])
+      movement.app_fill(app_params)
       if not movement.save
         render json: "Movement were not successfully created."
       end
