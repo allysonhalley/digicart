@@ -1,8 +1,6 @@
-<div class="box box-primary">
+<div class="box box-info">
   <div class="box-header with-border">
-    <i class="fa fa-bar-chart-o"></i>
-
-    <h3 class="box-title">Bar Chart</h3>
+    <h3 class="box-title">Line Chart</h3>
 
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -10,28 +8,92 @@
       <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
     </div>
   </div>
-  <div class="box-body">
-    <div id="bar-chart" style="height: 300px; padding: 0px; position: relative;">
-      <canvas class="flot-base" width="543" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 543.5px; height: 300px;"></canvas>
-      <div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);">
-        <div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-          <div class="flot-tick-label tickLabel" style="position: absolute; max-width: 90px; top: 283px; left: 25px; text-align: center;">January</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; max-width: 90px; top: 283px; left: 114px; text-align: center;">February</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; max-width: 90px; top: 283px; left: 211px; text-align: center;">March</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; max-width: 90px; top: 283px; left: 306px; text-align: center;">April</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; max-width: 90px; top: 283px; left: 398px; text-align: center;">May</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; max-width: 90px; top: 283px; left: 487px; text-align: center;">June</div>
-        </div>
-        <div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;">
-          <div class="flot-tick-label tickLabel" style="position: absolute; top: 270px; left: 7px; text-align: right;">0</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; top: 203px; left: 7px; text-align: right;">5</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 1px; text-align: right;">10</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; top: 68px; left: 1px; text-align: right;">15</div>
-          <div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 1px; text-align: right;">20</div>
-        </div>
-      </div>
-      <canvas class="flot-overlay" width="543" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 543.5px; height: 300px;"></canvas>
+  <div class="box-body chart-responsive">
+    <div class="chart" id="line-chart" style="height: 300px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+      <svg height="300" version="1.1" width="467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.666667px;">
+        <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc>
+        <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+        <text x="49.203125" y="261.671875" text-anchor="end" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal">
+          <tspan dy="3.9921875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan>
+        </text>
+        <path fill="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke="#aaaaaa" d="M61.703125,261.671875H441.667" stroke-width="0.5"></path>
+        <text x="49.203125" y="202.50390625" text-anchor="end" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal">
+          <tspan dy="3.99609375" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">5,000</tspan>
+        </text>
+        <path fill="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke="#aaaaaa" d="M61.703125,202.50390625H441.667" stroke-width="0.5"></path>
+        <text x="49.203125" y="143.3359375" text-anchor="end" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal">
+          <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">10,000</tspan>
+        </text>
+        <path fill="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke="#aaaaaa" d="M61.703125,143.3359375H441.667" stroke-width="0.5"></path>
+        <text x="49.203125" y="84.16796875" text-anchor="end" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal">
+          <tspan dy="4.00390625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">15,000</tspan>
+        </text>
+        <path fill="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke="#aaaaaa" d="M61.703125,84.16796875H441.667" stroke-width="0.5"></path>
+        <text x="49.203125" y="25" text-anchor="end" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal">
+          <tspan dy="3.9921875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">20,000</tspan>
+        </text>
+        <path fill="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke="#aaaaaa" d="M61.703125,25H441.667" stroke-width="0.5"></path>
+        <text x="371.9530934082624" y="274.171875" text-anchor="middle" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal" transform="matrix(1,0,0,1,0,6.6641)">
+          <tspan dy="3.9921875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013</tspan>
+        </text>
+        <text x="202.9776641859052" y="274.171875" text-anchor="middle" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" font-weight="normal" transform="matrix(1,0,0,1,0,6.6641)">
+          <tspan dy="3.9921875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012</tspan>
+        </text>
+        <path fill="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" stroke="#3c8dbc" d="M61.703125,230.1235140625C72.32179951397327,229.7921734375,93.5591485419198,232.12043300781252,104.17782305589307,228.7981515625C114.79649756986635,225.4758701171875,136.03384659781287,205.01618466956967,146.65252111178614,203.5452625C157.15577525060752,202.09032861488217,178.1622835282503,219.9022474609375,188.66553766707167,217.09472734375C199.16879180589305,214.28720722656251,220.17530008353583,183.88463562051743,230.6785542223572,181.0851015625C241.29722873633048,178.25480339395492,262.53457776427706,191.6317919921875,273.1532522782503,194.57539843749998C283.77192679222355,197.51900488281248,305.0092758201701,218.6188683529713,315.62795033414335,204.633953125C326.1312044729647,190.80104784515882,347.13771275060753,92.03052552550935,357.6409668894289,83.30411640625002C368.0288006530984,74.67360189269685,388.80446818043737,125.4908456151271,399.1923019441069,135.20625859375002C409.8109764580802,145.1375696385646,431.04832548602667,155.2198240234375,441.667,161.8910125" stroke-width="3"></path>
+        <circle cx="61.703125" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="230.1235140625" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="104.17782305589307" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="228.7981515625" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="146.65252111178614" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="203.5452625" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="188.66553766707167" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="217.09472734375" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="230.6785542223572" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="181.0851015625" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="273.1532522782503" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="194.57539843749998" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="315.62795033414335" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="204.633953125" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="357.6409668894289" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="83.30411640625002" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="399.1923019441069" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="135.20625859375002" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+        <circle cx="441.667" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" cy="161.8910125" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1"></circle>
+      </svg>
+      <div class="morris-hover morris-default-style" style="display: none;"></div>
     </div>
   </div>
-  <!-- /.box-body-->
+  <!-- /.box-body -->
+</div>
+
+<div class="box">
+  <!-- /.box-header -->
+  <div class="box-header">
+    <h1>Movements</h1>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Datetime</th>
+        <th>Type</th>
+        <th>Item</th>
+        <th>TAG</th>
+        <th>Status</th>
+        <th>Sector</th>
+        <th>Item price</th>
+        <th colspan="1">Total: <%= @movements %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @movements.each do |movement| %>
+          <tr>
+            <td><%= movement.datetime.strftime('%d/%m/%Y %T')%></td>
+            <td><%= movement.type.name %></td>
+            <td><%= movement.item.name %></td>
+            <td><%= movement.item.bar_code %></td>
+            <td><%= movement.status.describe %></td>
+            <td><%= movement.sector.name %></td>
+            <td><%= movement.item_price %></td>
+            <td><%= link_to 'Show', movement %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div>
+  <%= will_paginate @movements, renderer: BootstrapPagination::Rails %>
 </div>

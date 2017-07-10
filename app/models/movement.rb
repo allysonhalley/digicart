@@ -53,9 +53,7 @@ class Movement < ApplicationRecord
   end
 
   def for_date(date)
-
     Movement.where(datetime: date)
-
   end
 
 

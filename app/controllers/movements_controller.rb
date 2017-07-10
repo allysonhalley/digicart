@@ -118,15 +118,16 @@ class MovementsController < ApplicationController
 
   end
 
-  def dashboard
+  def reports
 
     @availables = Movement.availables
     @unavailables = Movement.unavailable
 
+
   end
 
   def timeline
-    
+    @movements = Movement.all.group(:datetime => [24]).count(:datetime)
   end
 
   def count_type(type_id)
@@ -156,6 +157,10 @@ class MovementsController < ApplicationController
 
     @availables = Movement.availables
     @unavailables = Movement.unavailable
+
+  end
+
+  def sales_amount
 
   end
 

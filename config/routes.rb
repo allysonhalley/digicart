@@ -27,9 +27,9 @@ Rails.application.routes.draw do
 
 
 
-  #Dashboard route
-  get 'dashboard', to: 'movements#dashboard', as: :dashboard
-  #Dashboard reports
+  #Report route
+  get 'reports', to: 'movements#reports', as: :reports
+  #Reports
   get 'for_product', to: 'movements#for_product', as: :for_product
   get 'for_sector', to: 'movements#for_sector', as: :for_sector
   get 'for_floor', to: 'movements#for_floor', as: :for_floor
@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   get 'availables_status', to: 'statuses#availables_status', as: :availables_status
   get 'availables_items', to: 'items#availables_items', as: :availables_items
   get 'availables_moves', to: 'movements#availables_items', as: :availables_moves
+  get 'timeline', to: 'movements#timeline', as: :timeline
 
 
 
