@@ -13,7 +13,6 @@
           <tr>
             <th>Datetime</th>
             <th>Type</th>
-            <th>Item</th>
             <th>TAG</th>
             <th>Status</th>
             <th>Sector</th>
@@ -26,7 +25,6 @@
               <tr>
                 <td><%= movement.datetime.strftime('%d/%m/%Y %T')%></td>
                 <td><%= movement.type.name %></td>
-                <td><%= movement.item.name %></td>
                 <td><%= movement.item.bar_code %></td>
                 <td><%= movement.status.describe %></td>
                 <td><%= movement.sector.name %></td>
